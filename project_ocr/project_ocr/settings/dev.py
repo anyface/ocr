@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+import sys
+sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -122,6 +124,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 静态文件搜索路径
+STATICFILES_DIRS = [
+                    os.path.join(BASE_DIR, 'static'),
+                    ]
 
 
 #日志
